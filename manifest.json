@@ -1,0 +1,33 @@
+{
+    "name": "Marigny",
+    "version": "1.0.0",
+    "description": "Record user activities as JSON",
+    "manifest_version": 2,
+    "content_scripts": [{
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/content.js",
+        "js/locator_old.js"
+      ]
+    }],
+    "background": {
+      "scripts": [
+        "scripts/controls.js",
+        "scripts/logger.js"
+      ],
+      "persistent": true
+    },
+    "browser_action": {
+      "default_icon": "img/reddot.png"
+    },
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "webRequest",
+      "webNavigation",
+      "<all_urls>",
+      "storage"
+    ]
+  }
